@@ -6,7 +6,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const t = await getTranslations({locale, namespace: 'Navigation'});
  
   return {
-    title: `${t('about')} | Seto's Post-Production`
+    title: `${t('about')} | Ali Ismail`
   };
 }
 
@@ -25,14 +25,14 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
     } catch {}
   }
 
-  const eyebrow = content.eyebrow || (locale === 'ar' ? 'من نحن' : 'WHO WE ARE');
-  const heading = content.heading || (locale === 'ar' ? 'أفضل استوديو سينمائي في العراق' : "IRAQ'S #1 CINEMATIC STUDIO");
+  const eyebrow = content.eyebrow || (locale === 'ar' ? 'عن علي' : 'ABOUT ALI');
+  const heading = content.heading || (locale === 'ar' ? 'مونتاج سينمائي\nبهدف واضح' : 'CINEMATIC EDITING\nWITH INTENT');
   const biography = content.biography || (locale === 'ar' 
-    ? 'استوديو سيتو لخدمات ما بعد الإنتاج هو استوديو متميز متخصص في تحرير الفيديو الاحترافي وتصحيح الألوان والمؤثرات البصرية للعلامات التجارية الرائدة.'
-    : 'Seto\'s Post-Production is a premium studio specializing in professional video editing, color grading, visual effects, and motion graphics for leading brands, filmmakers, and commercial productions.');
+    ? 'علي إسماعيل محرر ما بعد إنتاج سينمائي يركّز على الإيقاع والعاطفة والوضوح. يحوّل اللقطات الخام إلى أفلام وإعلانات وقصص رقمية مدروسة من أول كادر إلى آخره.'
+    : 'Ali Ismail is a cinematic post-production editor focused on rhythm, emotion, and clarity. He shapes raw footage into films, commercials, and digital stories that feel considered from the first frame to the last.');
   const secondaryStatement = content.secondaryStatement || (locale === 'ar'
-    ? 'نؤمن بقوة السرد البصري. من خلال الجمع بين أحدث التقنيات والرؤية السينمائية التي لا تقبل المساومة.'
-    : 'We believe in the power of visual storytelling. By combining cutting-edge technology with an uncompromising cinematic vision, we elevate raw footage into award-winning visual experiences.');
+    ? 'يُبنى كل مشروع بعين صانع أفلام: إيجاد الإيقاع المناسب، وصناعة الأجواء، وتقديم معالجة نهائية تخدم القصة.'
+    : 'Every project is approached with a filmmaker\'s eye: finding the right pace, building the right atmosphere, and delivering a finish that serves the story.');
 
   return (
     <div className="flex flex-col max-w-[1920px] mx-auto pb-32">
@@ -45,9 +45,9 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           </span>
           <div className="h-px w-24 bg-zinc-800"></div>
         </div>
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter uppercase font-heading text-white max-w-5xl">
-          <span>SETO&apos;S</span><br />
-          <span className="text-zinc-600">STUDIO</span>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter uppercase font-heading text-white max-w-5xl">
+          <span>ALI</span><br />
+          <span className="text-zinc-600">ISMAIL</span>
         </h1>
       </section>
 
@@ -68,7 +68,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
               <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-zinc-500/50"></div>
               
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="font-heading text-9xl text-white/5 uppercase select-none font-bold">S</span>
+                <span className="font-heading text-8xl text-white/5 uppercase select-none font-bold">A</span>
               </div>
             </div>
             
@@ -78,7 +78,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           {/* Biography */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-12">
             <div>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] font-heading uppercase whitespace-pre-line tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] font-heading uppercase whitespace-pre-line tracking-tight">
                 {heading}
               </h2>
             </div>

@@ -8,7 +8,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const t = await getTranslations({locale, namespace: 'Navigation'});
  
   return {
-    title: `${t('work')} | Seto's Post-Production`
+    title: `${t('work')} | Ali Ismail`
   };
 }
 
@@ -25,7 +25,7 @@ export default async function WorkPage({params}: {params: Promise<{locale: strin
   return (
     <div className="flex flex-col space-y-12 max-w-[1920px] mx-auto pb-32">
       <div className="space-y-4 px-6 md:px-12 lg:px-24 pt-12">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase font-heading text-white">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase font-heading text-white">
           <span>{t("work")}</span>
         </h1>
         <div className="w-24 h-1 bg-amber-500 rounded-full mt-6"></div>

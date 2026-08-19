@@ -1,6 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Camera, MessageCircle, Play, Video } from "lucide-react";
 import { getSiteSettings } from "@/lib/settings";
 
 export default async function Footer() {
@@ -14,7 +14,7 @@ export default async function Footer() {
         {/* Large Contact CTA */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24">
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tighter uppercase max-w-4xl text-white whitespace-pre-line">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tighter uppercase max-w-4xl text-white whitespace-pre-line">
               {locale === 'ar' ? 'هل لديك مشروع\nفي ذهنك؟' : 'Have a project\nin mind?'}
             </h2>
           </div>
@@ -42,34 +42,38 @@ export default async function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div className="space-y-2">
             <div className="font-heading font-bold text-2xl tracking-tighter text-white uppercase">
-              Seto<span className="text-amber-500">.</span>
+              Ali<span className="text-amber-500">.</span>
             </div>
             <div className="text-zinc-500 text-sm font-mono uppercase tracking-widest">
-              &copy; {new Date().getFullYear()} Seto&apos;s Post-Production. {locale === 'ar' ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}
+              &copy; {new Date().getFullYear()} Ali Ismail. {locale === 'ar' ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}
             </div>
           </div>
           
           <div className="flex flex-wrap items-center gap-8 text-sm font-mono uppercase tracking-widest text-zinc-400">
             {settings?.instagram && (
-              <a href={settings.instagram} target="_blank" rel="noopener noreferrer" className="relative group overflow-hidden pb-1">
+              <a href={settings.instagram} target="_blank" rel="noopener noreferrer" className="relative group flex items-center gap-2 overflow-hidden pb-1">
+                <Camera size={16} aria-hidden="true" className="group-hover:text-amber-500 transition-colors" />
                 <span className="group-hover:text-amber-500 transition-colors">{locale === 'ar' ? 'انستغرام' : 'Instagram'}</span>
                 <span className="absolute bottom-0 left-0 w-full h-px bg-amber-500 -translate-x-full rtl:translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
               </a>
             )}
             {settings?.youtube && (
-              <a href={settings.youtube} target="_blank" rel="noopener noreferrer" className="relative group overflow-hidden pb-1">
+              <a href={settings.youtube} target="_blank" rel="noopener noreferrer" className="relative group flex items-center gap-2 overflow-hidden pb-1">
+                <Play size={16} aria-hidden="true" className="group-hover:text-amber-500 transition-colors" />
                 <span className="group-hover:text-amber-500 transition-colors">{locale === 'ar' ? 'يوتيوب' : 'YouTube'}</span>
                 <span className="absolute bottom-0 left-0 w-full h-px bg-amber-500 -translate-x-full rtl:translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
               </a>
             )}
             {settings?.vimeo && (
-              <a href={settings.vimeo} target="_blank" rel="noopener noreferrer" className="relative group overflow-hidden pb-1">
+              <a href={settings.vimeo} target="_blank" rel="noopener noreferrer" className="relative group flex items-center gap-2 overflow-hidden pb-1">
+                <Video size={16} aria-hidden="true" className="group-hover:text-amber-500 transition-colors" />
                 <span className="group-hover:text-amber-500 transition-colors">{locale === 'ar' ? 'فيميو' : 'Vimeo'}</span>
                 <span className="absolute bottom-0 left-0 w-full h-px bg-amber-500 -translate-x-full rtl:translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
               </a>
             )}
             {settings?.whatsapp && settings.whatsapp.replace(/[^0-9]/g, '').length > 0 && (
-              <a href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="relative group overflow-hidden pb-1">
+              <a href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="relative group flex items-center gap-2 overflow-hidden pb-1">
+                <MessageCircle size={16} aria-hidden="true" className="group-hover:text-amber-500 transition-colors" />
                 <span className="group-hover:text-amber-500 transition-colors">{locale === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
                 <span className="absolute bottom-0 left-0 w-full h-px bg-amber-500 -translate-x-full rtl:translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
               </a>

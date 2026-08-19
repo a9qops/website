@@ -13,10 +13,11 @@ export default function AuthenticatedAdminLayout({
           <div className="flex h-20 justify-between items-center">
             <div className="flex items-center gap-8 md:gap-12">
               <Link href="/admin" className="text-2xl font-black text-white tracking-tighter uppercase font-heading hover:text-amber-500 transition-colors">
-                Nine<span className="text-amber-500">Admin</span>
+                Ali<span className="text-amber-500">Admin</span>
               </Link>
               <nav className="hidden md:flex items-center gap-8">
                 <Link href="/admin/projects" className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Projects</Link>
+                <Link href="/admin/services" className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Services</Link>
                 <Link href="/admin/content" className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Content</Link>
                 <Link href="/admin/settings" className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">Settings</Link>
               </nav>

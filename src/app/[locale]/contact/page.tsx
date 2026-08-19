@@ -2,13 +2,14 @@ import { getTranslations } from "next-intl/server";
 import ContactForm from "@/components/ContactForm";
 import { prisma } from "@/lib/prisma";
 import { getSiteSettings } from "@/lib/settings";
+import { Camera, MessageCircle, Play, Video } from "lucide-react";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
   const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'Navigation'});
  
   return {
-    title: `${t('contact')} | Seto's Post-Production`
+    title: `${t('contact')} | Ali Ismail`
   };
 }
 
@@ -29,16 +30,20 @@ export default async function ContactPage({params}: {params: Promise<{locale: st
     } catch {}
   }
 
-  const heading = content.heading || (locale === 'ar' ? 'تواصل معنا' : "CONTACT US");
+  const heading = content.heading || (locale === 'ar' ? 'لنصنع شيئاً\nلا يُنسى' : 'LET’S MAKE\nSOMETHING MEMORABLE');
   const introduction = content.introduction || (locale === 'ar' 
-    ? 'نحن هنا للإجابة على أسئلتك والبدء في مشروعك التالي.'
-    : 'We are here to answer your questions and start your next project.');
-  const ctaCopy = content.ctaCopy || (locale === 'ar' ? 'ابدأ مشروعك' : 'Start a Project');
+    ? 'لديك فيلم أو حملة أو قصة قيد التنفيذ؟ أخبر علي عنها لنجد معاً أسلوب ما بعد الإنتاج المناسب.'
+    : 'Have a film, campaign, or story in progress? Tell Ali about it and let’s find the right post-production approach.');
+  const ctaCopy = content.ctaCopy || (locale === 'ar' ? 'أخبرني عن مشروعك' : 'Tell Me About Your Project');
+  const whatsappNumber = siteSettings?.whatsapp?.replace(/[^0-9]/g, '');
+  const whatsappUrl = whatsappNumber
+    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(locale === 'ar' ? 'مرحباً علي، أود الاستفسار عن مشروع.' : 'Hi Ali, I would like to discuss a project.')}`
+    : null;
 
   return (
     <div className="flex flex-col space-y-12 max-w-6xl mx-auto pb-32 pt-12">
       <div className="space-y-4">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase font-heading text-white whitespace-pre-line">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase font-heading text-white whitespace-pre-line">
           {heading}
         </h1>
         <div className="w-24 h-1 bg-amber-500 rounded-full mt-6"></div>
@@ -72,6 +77,25 @@ export default async function ContactPage({params}: {params: Promise<{locale: st
                   <p className="text-lg">{siteSettings.email}</p>
                 </div>
               )}
+              {whatsappUrl && (
+                <a href={whatsappUrl} className="group block border-t border-white/10 pt-6 transition-colors hover:border-amber-500">
+                  <p className="mb-1 text-sm font-semibold uppercase tracking-widest text-amber-500">{locale === 'ar' ? 'واتساب' : 'WhatsApp'}</p>
+                  <p className="flex items-center gap-2 text-lg text-white group-hover:text-amber-500">
+                    <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                    {locale === 'ar' ? 'راسل علي مباشرة على واتساب ←' : 'Message Ali directly on WhatsApp →'}
+                  </p>
+                </a>
+              )}
+              {(siteSettings?.instagram || siteSettings?.youtube || siteSettings?.vimeo) && (
+                <div className="border-t border-white/10 pt-6">
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-amber-500">{locale === 'ar' ? 'روابط التواصل' : 'Social Media'}</p>
+                  <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-medium text-zinc-300">
+                    {siteSettings?.instagram && <a href={siteSettings.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-amber-500"><Camera className="h-4 w-4" />Instagram</a>}
+                    {siteSettings?.youtube && <a href={siteSettings.youtube} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-amber-500"><Play className="h-4 w-4" />YouTube</a>}
+                    {siteSettings?.vimeo && <a href={siteSettings.vimeo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-amber-500"><Video className="h-4 w-4" />Vimeo</a>}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -89,7 +113,7 @@ export default async function ContactPage({params}: {params: Promise<{locale: st
               send: locale === 'ar' ? 'إرسال الرسالة' : 'Send Message',
               sending: locale === 'ar' ? 'جاري الإرسال...' : 'Transmitting...',
               successTitle: locale === 'ar' ? 'تم الإرسال' : 'Transmission Sent',
-              successMessage: locale === 'ar' ? 'سيقوم فريقنا بمراجعة مشروعك والتواصل معك قريباً.' : 'Our producers will review your project and be in touch shortly.',
+              successMessage: locale === 'ar' ? 'سيطّلع علي على رسالتك ويتواصل معك قريباً.' : 'Ali will review your message and be in touch shortly.',
               sendAnother: locale === 'ar' ? 'إرسال رسالة أخرى' : 'Send another message',
               errorPrefix: locale === 'ar' ? 'فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى.' : 'Failed to send message. Please try again.'
             }} />

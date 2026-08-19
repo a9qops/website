@@ -34,7 +34,7 @@ model Project {
   descriptionAr  String?  @db.Text
   client         String?
   year           String?
-  
+
   youtubeUrl     String?
   youtubeVideoId String?
   posterUrl      String?
@@ -54,6 +54,7 @@ model SiteSettings {
   email              String?
   phone              String?
   whatsapp           String?
+  discordWebhook     String?
   instagram          String?
   youtube            String?
   vimeo              String?
@@ -79,4 +80,16 @@ model MediaAsset {
   
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id            String   @id @default(uuid())
+  titleEn       String
+  titleAr       String
+  descriptionEn String   @db.Text
+  descriptionAr String   @db.Text
+  sortOrder     Int      @default(0)
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }

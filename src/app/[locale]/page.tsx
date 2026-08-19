@@ -35,10 +35,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
     take: 6
   });
 
-  const heroEyebrow = content.heroEyebrow || (locale === 'ar' ? 'إنتاج سينمائي' : 'CINEMATIC POST-PRODUCTION');
-  const heroHeadline = content.heroHeadline || (locale === 'ar' ? 'استوديو سيتو' : "SETO'S STUDIO");
-  const heroIntro = content.heroIntro || (locale === 'ar' ? 'الارتقاء بالقصص المرئية.' : 'Elevating visual storytelling.');
-  const heroCta = content.heroCta || (locale === 'ar' ? 'شاهد أعمالنا' : 'View Our Work');
+  const heroEyebrow = content.heroEyebrow || (locale === 'ar' ? 'محرر ما بعد الإنتاج السينمائي' : 'CINEMATIC POST-PRODUCTION EDITOR');
+  const heroHeadline = content.heroHeadline || (locale === 'ar' ? 'علي\nإسماعيل' : 'ALI\nISMAIL');
+  const heroIntro = content.heroIntro || (locale === 'ar' ? 'أحوّل اللقطات إلى قصص تبقى في الذاكرة.' : 'Editing images into stories that stay with you.');
+  const heroCta = content.heroCta || (locale === 'ar' ? 'شاهد الأعمال المختارة' : 'View Selected Work');
   const featuredHeading = content.featuredHeading || (locale === 'ar' ? 'أعمال مختارة' : 'Selected Work');
 
   return (
@@ -70,7 +70,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
           {/* Headline */}
           <Reveal type="mask" delay={0.2}>
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter uppercase font-heading text-white whitespace-pre-line leading-none">
+            <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-bold tracking-tighter uppercase font-heading text-white whitespace-pre-line leading-none">
               {heroHeadline}
             </h1>
           </Reveal>
@@ -183,16 +183,16 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             
             <h2 className="text-3xl md:text-5xl font-bold font-heading uppercase text-white tracking-tight">
-              {locale === 'ar' ? 'الرؤية السينمائية.' : 'The Cinematic Vision.'}
+              {locale === 'ar' ? 'رؤية علي السينمائية.' : 'Ali’s Cinematic Eye.'}
             </h2>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto">
               {locale === 'ar' 
-                ? 'نحن استوديو ما بعد إنتاج حائز على جوائز، نتخصص في التحرير الاحترافي، تصحيح الألوان، وتصميم الحركة لأكبر العلامات التجارية.'
-                : 'We are an award-winning post-production studio specializing in high-end offline editing, color grading, and motion design for the world\'s leading brands.'}
+                ? 'علي إسماعيل محرر ما بعد إنتاج سينمائي متخصص في المونتاج وتصحيح الألوان والمعالجة النهائية للأفلام والإعلانات والقصص الرقمية.'
+                : 'Ali Ismail is a cinematic post-production editor specialising in editing, colour grading, and final finishing for films, commercials, and digital stories.'}
             </p>
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
               <Link href="/about" className="text-white uppercase tracking-widest text-sm font-bold font-mono transition-colors border-b border-zinc-700 hover:border-white pb-1">
-                {locale === 'ar' ? 'من نحن' : 'Who We Are'}
+                {locale === 'ar' ? 'عن علي' : 'About Ali'}
               </Link>
               <Link href="/services" className="text-white uppercase tracking-widest text-sm font-bold font-mono transition-colors border-b border-zinc-700 hover:border-amber-500 hover:text-amber-500 pb-1">
                 {locale === 'ar' ? 'خدماتنا' : 'Our Expertise'}

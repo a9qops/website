@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{locale: st
   
   const settings = await getSiteSettings();
   
-  const defaultTitle = "Seto's Post-Production";
-  const defaultDesc = "Cinematic post-production studio.";
+  const defaultTitle = 'Ali Ismail | Cinematic Post-Production Editor';
+  const defaultDesc = 'Cinematic editing, colour grading, and finishing by Ali Ismail.';
   
   return {
     title: locale === 'ar' ? (settings?.defaultSeoTitleAr || defaultTitle) : (settings?.defaultSeoTitleEn || defaultTitle),

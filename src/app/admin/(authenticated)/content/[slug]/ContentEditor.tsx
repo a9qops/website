@@ -23,7 +23,6 @@ const PAGE_SCHEMAS: Record<string, { key: string; label: string; type: 'text' | 
   services: [
     { key: 'heading', label: 'Heading', type: 'text' },
     { key: 'introduction', label: 'Introduction', type: 'textarea' },
-    { key: 'servicesList', label: 'Services (comma separated)', type: 'textarea' },
   ],
   contact: [
     { key: 'heading', label: 'Heading', type: 'text' },

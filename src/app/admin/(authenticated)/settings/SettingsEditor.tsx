@@ -13,6 +13,7 @@ export default function SettingsEditor({ initialData = {} }: { initialData?: Par
     email: initialData.email || '',
     phone: initialData.phone || '',
     whatsapp: initialData.whatsapp || '',
+    discordWebhook: initialData.discordWebhook || '',
     instagram: initialData.instagram || '',
     youtube: initialData.youtube || '',
     vimeo: initialData.vimeo || '',
@@ -105,6 +106,18 @@ export default function SettingsEditor({ initialData = {} }: { initialData?: Par
                 placeholder="e.g. +1234567890"
                 className="bg-transparent border-b border-white/20 px-0 py-4 text-white focus:outline-none focus:border-amber-500 sm:text-sm sm:leading-6 w-full"
               />
+            </div>
+            <div>
+              <label className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Discord Webhook URL</label>
+              <input
+                type="url"
+                name="discordWebhook"
+                value={formData.discordWebhook}
+                onChange={handleChange}
+                placeholder="https://discord.com/api/webhooks/..."
+                className="bg-transparent border-b border-white/20 px-0 py-4 text-white focus:outline-none focus:border-amber-500 sm:text-sm sm:leading-6 w-full"
+              />
+              <p className="mt-2 text-xs text-zinc-500">Contact form submissions are delivered to this private webhook.</p>
             </div>
           </div>
         </section>

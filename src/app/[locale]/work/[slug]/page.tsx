@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const description = locale === 'ar' ? project.descriptionAr : project.descriptionEn;
 
   return {
-    title: `${title} | Seto's Post-Production`,
+    title: `${title} | Ali Ismail`,
     description: description,
   };
 }
@@ -69,7 +69,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </Reveal>
 
           <Reveal type="mask" delay={0.2}>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase font-heading text-white whitespace-pre-line leading-none">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tighter uppercase font-heading text-white whitespace-pre-line leading-none">
               {title}
             </h1>
           </Reveal>

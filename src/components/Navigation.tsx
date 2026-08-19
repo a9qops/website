@@ -44,7 +44,7 @@ export default function Navigation({ locale }: { locale: string }) {
           
           <Link href="/" className="flex items-center gap-2 group z-50 relative">
             <div className="font-heading font-black text-2xl tracking-tighter text-white group-hover:text-accent transition-colors">
-              SETO<span className="text-accent">.</span>
+              ALI<span className="text-accent">.</span>
             </div>
           </Link>
           

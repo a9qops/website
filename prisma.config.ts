@@ -1,6 +1,8 @@
 import "dotenv/config";
 import { defineConfig } from "prisma/config";
 
+const shadowDatabaseUrl = process.env.SHADOW_DATABASE_URL;
+
 export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
@@ -9,6 +11,8 @@ export default defineConfig({
   },
   datasource: {
     url: process.env.DATABASE_URL,
-    shadowDatabaseUrl: process.env.SHADOW_DATABASE_URL,
+    ...(shadowDatabaseUrl?.startsWith("postgresql://") || shadowDatabaseUrl?.startsWith("postgres://")
+      ? { shadowDatabaseUrl }
+      : {}),
   },
 });

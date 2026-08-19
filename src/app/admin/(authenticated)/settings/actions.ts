@@ -9,6 +9,7 @@ const settingsSchema = z.object({
   email: z.string().email().optional().or(z.literal("")),
   phone: z.string().optional().or(z.literal("")),
   whatsapp: z.string().optional().or(z.literal("")),
+  discordWebhook: z.string().url().optional().or(z.literal("")),
   instagram: z.string().url().optional().or(z.literal("")),
   youtube: z.string().url().optional().or(z.literal("")),
   vimeo: z.string().url().optional().or(z.literal("")),
@@ -37,6 +38,7 @@ export async function updateSettings(data: Record<string, string | null>) {
       email: validData.email || null,
       phone: validData.phone || null,
       whatsapp: validData.whatsapp || null,
+      discordWebhook: validData.discordWebhook || null,
       instagram: validData.instagram || null,
       youtube: validData.youtube || null,
       vimeo: validData.vimeo || null,
@@ -52,6 +54,7 @@ export async function updateSettings(data: Record<string, string | null>) {
       email: validData.email || null,
       phone: validData.phone || null,
       whatsapp: validData.whatsapp || null,
+      discordWebhook: validData.discordWebhook || null,
       instagram: validData.instagram || null,
       youtube: validData.youtube || null,
       vimeo: validData.vimeo || null,
@@ -65,5 +68,6 @@ export async function updateSettings(data: Record<string, string | null>) {
   });
 
   revalidatePath("/", "layout");
+  revalidateTag("siteSettings", "max");
   return { success: true };
 }

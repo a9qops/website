@@ -20,7 +20,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans">
       <div className="sm:mx-auto sm:w-full sm:max-w-md space-y-4 px-6 sm:px-0">
         <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase font-heading text-white">
-          <span>Nine</span><br />
+          <span>Ali</span><br />
           <span className="text-amber-500">Admin</span>
         </h2>
         <div className="w-16 h-1 bg-amber-500 rounded-full mt-6 mb-8"></div>

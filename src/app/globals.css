@@ -30,6 +30,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html[lang="ar"] {
+  --font-sans: var(--font-cairo), sans-serif;
+  --font-heading: var(--font-cairo), sans-serif;
+  --font-mono: var(--font-cairo), sans-serif;
+}
+
 /* Reduced Motion Foundation */
 @media (prefers-reduced-motion: reduce) {
   *,

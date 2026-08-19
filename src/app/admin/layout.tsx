@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import '../globals.css'; // Make sure styles are applied
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard | Nine Portfolio',
+  title: 'Admin Dashboard | Ali Ismail',
   robots: {
     index: false,
     follow: false,

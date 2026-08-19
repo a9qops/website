@@ -8,7 +8,7 @@ export default function AdminDashboard() {
         <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase font-heading text-white">Dashboard</h2>
         <div className="w-16 h-1 bg-amber-500 rounded-full mt-6"></div>
         <p className="mt-4 text-sm font-bold uppercase tracking-widest text-zinc-500">
-          Welcome to the Nine Portfolio content management system.
+          Manage Ali Ismail&apos;s portfolio, services, and site content.
         </p>
       </div>
       
