@@ -1,0 +1,99 @@
+[
+  {
+    "id": "project-1",
+    "title": "Tears of Steel",
+    "client": "Mango Open Movie",
+    "category": "VFX",
+    "services": [
+      "VFX",
+      "Color Grading",
+      "Compositing"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-2",
+    "title": "Sintel",
+    "client": "Blender Foundation",
+    "category": "Animation",
+    "services": [
+      "Color Grading",
+      "Sound Design"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-3",
+    "title": "Neon Dreams",
+    "client": "Sony Music",
+    "category": "Music Video",
+    "services": [
+      "Color Grading",
+      "VFX"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-4",
+    "title": "Desert Run",
+    "client": "Ford",
+    "category": "Commercial",
+    "services": [
+      "Editing",
+      "Color Grading"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-5",
+    "title": "Big Buck Bunny",
+    "client": "Peach Open Movie",
+    "category": "Animation",
+    "services": [
+      "VFX",
+      "Sound Design"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-6",
+    "title": "Elephants Dream",
+    "client": "Orange Open Movie",
+    "category": "Short Film",
+    "services": [
+      "Editing",
+      "Motion Graphics"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-7",
+    "title": "City Lights",
+    "client": "Nike",
+    "category": "Commercial",
+    "services": [
+      "Editing",
+      "Motion Graphics"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  },
+  {
+    "id": "project-8",
+    "title": "Subaru Outback",
+    "client": "Subaru",
+    "category": "Commercial",
+    "services": [
+      "Color Grading",
+      "VFX"
+    ],
+    "thumbnail": "",
+    "videoUrl": "/nabu 6.mp4"
+  }
+]

@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PageContent {
+  id          String   @id @default(uuid())
+  pageSlug    String   @unique // "home", "about", "services", "contact"
+  titleEn     String
+  titleAr     String
+  contentEn   String   @db.Text
+  contentAr   String   @db.Text
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id             String   @id @default(uuid())
+  slug           String   @unique
+  titleEn        String
+  titleAr        String
+  descriptionEn  String?  @db.Text
+  descriptionAr  String?  @db.Text
+  client         String?
+  year           String?
+  
+  youtubeUrl     String?
+  youtubeVideoId String?
+  posterUrl      String?
+  posterAltEn    String?
+  posterAltAr    String?
+  
+  featured       Boolean  @default(false)
+  published      Boolean  @default(false)
+  sortOrder      Int      @default(0)
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model SiteSettings {
+  id                 String   @id @default("global")
+  email              String?
+  phone              String?
+  whatsapp           String?
+  instagram          String?
+  youtube            String?
+  vimeo              String?
+  locationEn         String?
+  locationAr         String?
+  defaultSeoTitleEn  String?
+  defaultSeoTitleAr  String?
+  defaultSeoDescEn   String?
+  defaultSeoDescAr   String?
+  
+  updatedAt          DateTime @updatedAt
+}
+
+model MediaAsset {
+  id        String   @id @default(uuid())
+  url       String
+  key       String   @unique
+  mimeType  String?
+  width     Int?
+  height    Int?
+  altEn     String?
+  altAr     String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
